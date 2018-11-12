@@ -14,82 +14,67 @@ class CreditCard
 {
     protected static $cards = array(
         // Debit cards must come first, since they have more specific patterns than their credit-card equivalents.
-
-        'visaelectron' => array(
-            'type' => 'visaelectron',
-            'pattern' => '/^4(026|17500|405|508|844|91[37])/',
-            'length' => array(16),
-            'cvcLength' => array(3),
-            'luhn' => true,
-        ),
-        'maestro' => array(
-            'type' => 'maestro',
-            'pattern' => '/^(5(018|0[23]|[68])|6(39|7))/',
-            'length' => array(12, 13, 14, 15, 16, 17, 18, 19),
-            'cvcLength' => array(3),
-            'luhn' => true,
-        ),
-        'forbrugsforeningen' => array(
-            'type' => 'forbrugsforeningen',
-            'pattern' => '/^600/',
-            'length' => array(16),
-            'cvcLength' => array(3),
-            'luhn' => true,
-        ),
-        'dankort' => array(
-            'type' => 'dankort',
-            'pattern' => '/^5019/',
-            'length' => array(16),
-            'cvcLength' => array(3),
-            'luhn' => true,
-        ),
         // Credit cards
-        'visa' => array(
-            'type' => 'visa',
+        'Visa' => array(
+            'type' => 'Visa',
             'pattern' => '/^4/',
             'length' => array(13, 16),
             'cvcLength' => array(3),
             'luhn' => true,
         ),
-        'mastercard' => array(
-            'type' => 'mastercard',
+        'Master' => array(
+            'type' => 'Master',
             'pattern' => '/^(5[0-5]|2[2-7])/',
             'length' => array(16),
             'cvcLength' => array(3),
             'luhn' => true,
         ),
-        'amex' => array(
-            'type' => 'amex',
+        'Amex' => array(
+            'type' => 'Amex',
             'pattern' => '/^3[47]/',
             'format' => '/(\d{1,4})(\d{1,6})?(\d{1,5})?/',
             'length' => array(15),
             'cvcLength' => array(3, 4),
             'luhn' => true,
         ),
-        'dinersclub' => array(
-            'type' => 'dinersclub',
+        'Diners' => array(
+            'type' => 'Diners',
             'pattern' => '/^3[0689]/',
             'length' => array(14),
             'cvcLength' => array(3),
             'luhn' => true,
         ),
-        'discover' => array(
-            'type' => 'discover',
+        'Discover' => array(
+            'type' => 'Discover',
             'pattern' => '/^6([045]|22)/',
+            'length' => array(16),
+            'cvcLength' => array(4),
+            'luhn' => true,
+        ),
+        'JCB' => array(
+            'type' => 'JCB',
+            'pattern' => '/^35/',
             'length' => array(16),
             'cvcLength' => array(3),
             'luhn' => true,
         ),
-        'unionpay' => array(
-            'type' => 'unionpay',
-            'pattern' => '/^(62|88)/',
-            'length' => array(16, 17, 18, 19),
+        'Elo' => array(
+            'type' => 'Elo',
+            'pattern' => '/^(4011(78|79)|43(1274|8935)|45(1416|7393|763(1|2))|50(4175|6699|67[0-7][0-9]|9000)|50(9[0-9][0-9][0-9])|627780|63(6297|6368)|650(03([^4])|04([0-9])|05(0|1)|05([7-9])|06([0-9])|07([0-9])|08([0-9])|4([0-3][0-9]|8[5-9]|9[0-9])|5([0-9][0-9]|3[0-8])|9([0-6][0-9]|7[0-8])|7([0-2][0-9])|541|700|720|727|901)|65165([2-9])|6516([6-7][0-9])|65500([0-9])|6550([0-5][0-9])|655021|65505([6-7])|6516([8-9][0-9])|65170([0-4]))/',
+            'length' => array(16),
             'cvcLength' => array(3),
-            'luhn' => false,
+            'luhn' => true,
         ),
-        'jcb' => array(
-            'type' => 'jcb',
-            'pattern' => '/^35/',
+        'Aura' => array(
+            'type' => 'Aura',
+            'pattern' => '/^50/',
+            'length' => array(16),
+            'cvcLength' => array(3),
+            'luhn' => true,
+        ),
+        'Hipercard' => array(
+            'type' => 'Hipercard',
+            'pattern' => '/^3841[046]0|^60/',
             'length' => array(16),
             'cvcLength' => array(3),
             'luhn' => true,
